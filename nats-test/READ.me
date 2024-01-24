@@ -1,0 +1,12 @@
+
+kubectl get pods
+kubectl port-foward nats-depl-57b8bb558d-dsnts 4222:4222
+npm run publish
+npm run listener
+
+process.stdout.write("\u001b[2J\u001b[0;0H");
+
+kubectl port-foward nats-depl-57b8bb558d-dsnts 8222:8222
+http://localhost:8222/streaming
+
+
