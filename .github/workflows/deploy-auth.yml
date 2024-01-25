@@ -10,6 +10,7 @@ jobs:
         runs-on: ubuntu-latest 
         steps: 
             - uses: actions/checkout@v2 
+            - run: docker login -u dynamicq
             - run: cd auth && docker build -t dynamicq/auth .
             - 
               uses: docker/login-action@v1 
