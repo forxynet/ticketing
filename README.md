@@ -51,10 +51,6 @@ deployment.apps/demo created
 kubectl expose deployment demo
 service/demo exposed
 
-kubectl create ingress demo-localhost --class=nginx \
- --rule="demo.localdev.me/\*=demo:80"
-ingress.networking.k8s.io/demo-localhost created
-
 kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80
 Forwarding from 127.0.0.1:8080 -> 80
 Forwarding from [::1]:8080 -> 80
@@ -67,3 +63,20 @@ choco install -y skaffold
 
 skaffold fix
 skaffold dev
+
+
+*** digital ocian ***
+
+[1]
+kubectl config use-context **
+    [output] Swittches to contex **
+
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=****
+    output secret/jwt-secret created
+
+[2]
+kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=sk_test_****
+    [output] secret/stripe-secret created
+
+[3]
+https://kubernetes.github.io/ingress-nginx/deploy/#digital-ocean
