@@ -80,3 +80,5 @@ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=sk_test_**
 
 [3]
 https://kubernetes.github.io/ingress-nginx/deploy/#digital-ocean
+
+[4]
