@@ -12,7 +12,8 @@ jobs:
       - run: cd tickets && npm install && npm run test:ci
       - run: cd tickets && docker build -t dynamicq/tickets . 
       - run: 
-          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} -password-stdin
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} 
+          -password-stdin
         env:
           $DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           $DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
