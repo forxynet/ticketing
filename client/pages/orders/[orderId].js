@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import useRequest from '../../hooks/use-request';
 import Router from 'next/router';
+import { Switch } from '@stripe/ui-extension-sdk/ui';
 
 const OrderShow = ({ order, currentUser }) => {
 	const [timeLeft, setTimeLeft] = useState(0);
@@ -34,14 +35,25 @@ const OrderShow = ({ order, currentUser }) => {
 
 	return (
 		<div>
-			Time left to pay: {timeLeft} seconds
-			<StripeCheckout
-				token={({ id }) => doRequest({ token: id })}
-				stripeKey='pk_test_51MD6j5KLFEejBUW6fijiD6cgo8OkwU2fDcXt8d74pEuLFoyhPNlyq88sGzrvigBYxWbnnLDPvu49V2nhWQi8lZSk00rAM4Mw07'
-				amount={order.ticket.price * 100}
-				email={currentUser.email}
-			/>
-			{errors}
+			<span class='placeholder col-12 bg-primary'></span>
+			<span class='placeholder col-12 bg-secondary'></span>
+			<div class='mb-3'>Time left to pay: {timeLeft} seconds</div>
+			<div class='mb-3'>
+				<StripeCheckout
+					token={({ id }) => doRequest({ token: id })}
+					stripeKey='pk_test_51MD6j5KLFEejBUW6fijiD6cgo8OkwU2fDcXt8d74pEuLFoyhPNlyq88sGzrvigBYxWbnnLDPvu
+49V2nhWQi8lZSk00rAM4Mw07'
+					amount={order.ticket.price * 100}
+					email={currentUser.email}
+				/>
+				{errors}
+				<Switch
+					label='This is a Switch.'
+					onChange={(e) => {
+						console.log(e.target.checked);
+					}}
+				/>
+			</div>
 		</div>
 	);
 };

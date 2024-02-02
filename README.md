@@ -71,11 +71,11 @@ skaffold dev
 kubectl config use-context **
     [output] Swittches to contex **
 
-kubectl create secret generic jwt-secret --from-literal=JWT_KEY=****
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdfasdf
     output secret/jwt-secret created
 
 [2]
-kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=sk_test_****
+kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=sk_test_51MD6j5KLFEejBUW6UMmxzyDOnFZfvTTxSboSRWGUzCNz6FUYKP5Ctfdq4pERvjCwC51s4du9vstIAeJ8ymtBfBvM00Ngy5MpRZ
     [output] secret/stripe-secret created
 
 [3]
