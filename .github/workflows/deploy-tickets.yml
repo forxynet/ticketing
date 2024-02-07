@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - 'tickets/**'
-
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - 'payments/**'
-
 jobs:
   build:
     runs-on: ubuntu-latest
