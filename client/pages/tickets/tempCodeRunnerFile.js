@@ -1,0 +1,1 @@
+<span class='placeholder col-12 bg-primary'></span>

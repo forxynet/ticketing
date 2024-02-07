@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import useRequest from '../../hooks/use-request';
 import Router from 'next/router';
-import { Switch } from '@stripe/ui-extension-sdk/ui';
 
 const OrderShow = ({ order, currentUser }) => {
 	const [timeLeft, setTimeLeft] = useState(0);
@@ -47,12 +46,6 @@ const OrderShow = ({ order, currentUser }) => {
 					email={currentUser.email}
 				/>
 				{errors}
-				<Switch
-					label='This is a Switch.'
-					onChange={(e) => {
-						console.log(e.target.checked);
-					}}
-				/>
 			</div>
 		</div>
 	);
